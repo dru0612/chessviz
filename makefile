@@ -28,4 +28,5 @@ all: ./bin/chessviz.exe
 
 clean:
 	rm -rf build/*.o build/*.d
+
 run:./bin/chessviz.exe
