@@ -1,3 +1,4 @@
+g = g++
 CFLAGS = -Wall -Werror -MP -MMD
 
 
@@ -11,7 +12,7 @@ all: ./bin/chessviz.exe
 
 
 ./bin/chessviz.exe: ./build/main.o ./build/DrawingBoard.o ./build/move.o
-	$(g) $(CFLAGS) -o ./bin/chess.exe ./build/main.o ./build/move.o ./build/DrawingBoard.o -lm
+	$(g) $(CFLAGS) -o ./bin/chessviz.exe ./build/main.o ./build/move.o ./build/DrawingBoard.o -lm
 
 
 ./build/main.o: ./src/main.cpp ./src/header.h
@@ -29,4 +30,5 @@ all: ./bin/chessviz.exe
 clean:
 	rm -rf build/*.o build/*.d
 
-run:./bin/chessviz.exe
+run:
+	./bin/chessviz.exe
