@@ -6,7 +6,7 @@
 using namespace std;
 
 int x1 = 0, x2 = 0;
-int y1 = 0, y2 = 0;
+int Yb = 0, y2 = 0;
 
 void move(char mowement[], char board[][9])
 {
@@ -21,11 +21,11 @@ void move(char mowement[], char board[][9])
 
 void movePawn(char board[][9])
 {
-    if (board[y1 - 1][x1] == 'p') {
-        board[y1 - 1][x1] = ' ';
+    if (board[Yb - 1][x1] == 'p') {
+        board[Yb - 1][x1] = ' ';
         board[y2 - 1][x2] = 'p';
-    } else if (board[y1 - 1][x1] == 'P') {
-        board[y1 - 1][x1] = ' ';
+    } else if (board[Yb - 1][x1] == 'P') {
+        board[Yb - 1][x1] = ' ';
         board[y2 - 1][x2] = 'P';
     }
 }
@@ -93,12 +93,12 @@ bool CorrectInput(char mowement[], char board[][9])
         break;
     }
     transformIntoInt[0] = mowement[1];
-    y1 = atoi(transformIntoInt.c_str());
+    Yb = atoi(transformIntoInt.c_str());
 
     transformIntoInt[0] = mowement[4];
     y2 = atoi(transformIntoInt.c_str());
 
-    if (y1 <= outOfBoard1 || y1 >= outOfBoard2 || x1 <= outOfBoard1
+    if (Yb <= outOfBoard1 || Yb >= outOfBoard2 || x1 <= outOfBoard1
         || x1 >= outOfBoard2 || x2 <= outOfBoard1 || x2 >= outOfBoard2
         || y2 <= outOfBoard1 || y2 >= outOfBoard2) {
         cout << "Incorrect input" << endl;
