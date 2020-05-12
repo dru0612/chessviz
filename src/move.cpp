@@ -17,7 +17,7 @@ void move(char mowement[], char board[][9])
             movePawn(board);
         }
     } else {
-        checking  = 1;
+        checking = 1;
         if (CorrectInput(mowement, board, checking)) {
             movePiece(mowement, board)
         }
