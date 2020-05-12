@@ -15,14 +15,14 @@ char board[9][9] = {{'1', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
                     {'8', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
                     {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
 
-TEST_CASE("Move_Pawntrue", "Correct")
+TEST_CASE("movePawn_1", "Correct pawn move")
 {
     int checking = 0;
     char mowement[6] = "e2-e4";
     REQUIRE(CorrectInput(mowement, board, checking) == true);
 }
 
-TEST_CASE("Move_Pawntrue", "Incorrect")
+TEST_CASE("movePawn_2", "Incorrect pawn move")
 {
     int checking = 0;
     char mowement[6] = "c8-c9";
