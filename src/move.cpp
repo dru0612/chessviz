@@ -19,7 +19,7 @@ void move(char mowement[], char board[][9])
     } else {
         checking = 1;
         if (CorrectInput(mowement, board, checking)) {
-            movePiece(mowement, board)
+            movePiece(mowement, board);
         }
     }
 }
