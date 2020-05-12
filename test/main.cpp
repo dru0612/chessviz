@@ -25,7 +25,7 @@ TEST_CASE("Move_Pawntrue", "Correct")
 TEST_CASE("Move_Pawntrue", "Incorrect")
 {
     int checking = 0;
-    char mowement[6] = "b8-b9";
+    char mowement[6] = "c8-c9";
     REQUIRE(CorrectInput(mowement, board, checking) == false);
 }
 
