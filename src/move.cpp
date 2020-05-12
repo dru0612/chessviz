@@ -79,6 +79,10 @@ bool CorrectInput(char mowement[], char board[][9], int checking)
     case 'h':
         x1 = 8;
         break;
+    default: {
+        cout << "Incorrect input" << endl << endl;
+        return false;
+    }; break;
     }
 
     switch (mowement[3 + checking]) {
@@ -106,6 +110,10 @@ bool CorrectInput(char mowement[], char board[][9], int checking)
     case 'h':
         x2 = 8;
         break;
+    default: {
+        cout << "Incorrect input" << endl << endl;
+        return false;
+    }; break;
     }
     transformIntoInt[0] = mowement[1 + checking];
     Yb = atoi(transformIntoInt.c_str());
