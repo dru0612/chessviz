@@ -19,12 +19,12 @@ TEST_CASE("Move_Pawntrue", "Correct")
 {
     int checking = 0;
     char movement[6] = "e2-e4";
-    REQUIRE(CorrectInput( movement,board,checking) == true);
+    REQUIRE(CorrectInput(movement, board, checking) == true);
 }
 
 TEST_CASE("Move_Pawntrue", "Incorrect")
 {
     int checking = 0;
     char movement[6] = "b8-b9";
-    REQUIRE(CorrectInput( movement,board,checking) == false);
+    REQUIRE(CorrectInput(movement, board, checking) == false);
 }
