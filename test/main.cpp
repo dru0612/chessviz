@@ -29,14 +29,14 @@ TEST_CASE("movePawn_2", "Incorrect pawn move")
     REQUIRE(CorrectInput(mowement, board, checking) == false);
 }
 
-TEST_CASE("CorrectMovePiece", "Correct")
+TEST_CASE("CorrectPieceMove", "Correct")
 {
     int checking = 1;
     char mowement[7] = "Bc8-c6";
     REQUIRE(CorrectInput(mowement, board, checking) == true);
 }
 
-TEST_CASE("IncorrectMovePiece", "Incorrect")
+TEST_CASE("IncorrectPieceMove", "Incorrect")
 {
     int checking = 1;
     char mowement[7] = "Qc8-c9";
