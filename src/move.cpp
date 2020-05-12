@@ -7,7 +7,6 @@ using namespace std;
 
 int x1 = 0, x2 = 0;
 int Yb = 0, y2 = 0;
-int sideMin=0, sideMax=9;
 int checking;
 
 void move(char mowement[], char board[][9])
