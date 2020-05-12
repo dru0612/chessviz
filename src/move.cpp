@@ -7,15 +7,21 @@ using namespace std;
 
 int x1 = 0, x2 = 0;
 int Yb = 0, y2 = 0;
+int sideMin=0, sideMax=9;
+int checking;
 
 void move(char mowement[], char board[][9])
 {
     if (strlen(mowement) == 5) {
-        if (CorrectInput(mowement, board)) {
+        checking = 0;
+        if (CorrectInput(mowement, board,checking)) {
             movePawn(board);
         }
     } else {
-        cout << "Neverny vvod." << endl;
+        checking  = 1;
+        if (CorrectInput(mowement, board,checking)) {
+            movePiece(movement, board)
+        }
     }
 }
 
@@ -27,10 +33,21 @@ void movePawn(char board[][9])
     } else if (board[Yb - 1][x1] == 'P') {
         board[Yb - 1][x1] = ' ';
         board[y2 - 1][x2] = 'P';
+    } else {
+        cout << "Incorrect input. This not a pawn" << endl
+             << endl;
     }
 }
 
-bool CorrectInput(char mowement[], char board[][9])
+void movePiece(char movement[], char board[][9])
+{
+    if (board[Yb - 1][x1] == movement[0]) {
+        board[Yb - 1][x1] = ' ';
+        board[y2 - 1][x2] = movement[0];
+    }
+}
+
+bool CorrectInput(char mowement[], char board[][9], int checking)
 {
     if (mowement[2] == '-' || mowement[2] == 'x') {
     } else {
@@ -39,7 +56,7 @@ bool CorrectInput(char mowement[], char board[][9])
     }
     string transformIntoInt = " ";
     int outOfBoard1 = 0, outOfBoard2 = 9;
-    switch (mowement[0]) {
+    switch (mowement[0 + checking]) {
     case 'a':
         x1 = 1;
         break;
@@ -66,7 +83,7 @@ bool CorrectInput(char mowement[], char board[][9])
         break;
     }
 
-    switch (mowement[3]) {
+    switch (mowement[3 + checking]) {
     case 'a':
         x2 = 1;
         break;
@@ -92,10 +109,10 @@ bool CorrectInput(char mowement[], char board[][9])
         x2 = 8;
         break;
     }
-    transformIntoInt[0] = mowement[1];
+    transformIntoInt[0] = mowement[1 + checking];
     Yb = atoi(transformIntoInt.c_str());
 
-    transformIntoInt[0] = mowement[4];
+    transformIntoInt[0] = mowement[4 + checking];
     y2 = atoi(transformIntoInt.c_str());
 
     if (Yb <= outOfBoard1 || Yb >= outOfBoard2 || x1 <= outOfBoard1
