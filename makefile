@@ -33,8 +33,5 @@ testRun:
 clean:
 	rm -rf build/*.o build/*.d build/test/*.o build/test/*.d
 
-testRun:
-		./bin/chessviz-test
-
 run:
 	./bin/chessviz.exe
