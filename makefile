@@ -26,9 +26,29 @@ all: ./bin/chessviz.exe
 ./build/move.o: ./src/move.cpp ./src/header.h
 	$(g) $(CFLAGS) -o ./build/move.o -c ./src/move.cpp -lm
 
+test: create bin/chessviz-test
+
+bin/chessviz-test: build/test/main.o build/test/move.o
+			$(g) -o bin/chessviz-test build/test/main.o build/test/move.o
+
+build/test/main.o: test/main.cpp
+			$(g) $(CFLAGS) -o build/test/main.o -c test/main.cpp
+
+
+build/test/move.o: src/move.cpp
+			$(g) $(CFLAGS) -o build/test/move.o -c src/move.cpp
+
+create:
+			mkdir -p bin/temp build/src build/test
+
+			testRun:
+				./bin/chessviz-test
 
 clean:
 	rm -rf build/*.o build/*.d
+
+testRun:
+		./bin/chessviz-test
 
 run:
 	./bin/chessviz.exe
