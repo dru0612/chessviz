@@ -13,12 +13,12 @@ void move(char mowement[], char board[][9])
 {
     if (strlen(mowement) == 5) {
         checking = 0;
-        if (CorrectInput(mowement, board,checking)) {
+        if (CorrectInput(mowement, board, checking)) {
             movePawn(board);
         }
     } else {
         checking  = 1;
-        if (CorrectInput(mowement, board,checking)) {
+        if (CorrectInput(mowement, board, checking)) {
             movePiece(mowement, board)
         }
     }
@@ -33,8 +33,7 @@ void movePawn(char board[][9])
         board[Yb - 1][x1] = ' ';
         board[y2 - 1][x2] = 'P';
     } else {
-        cout << "Incorrect input. This not a pawn" << endl
-             << endl;
+        cout << "Incorrect input. This not a pawn" << endl << endl;
     }
 }
 
