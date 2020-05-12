@@ -19,7 +19,7 @@ void move(char mowement[], char board[][9])
     } else {
         checking  = 1;
         if (CorrectInput(mowement, board,checking)) {
-            movePiece(movement, board)
+            movePiece(mowement, board)
         }
     }
 }
@@ -38,11 +38,11 @@ void movePawn(char board[][9])
     }
 }
 
-void movePiece(char movement[], char board[][9])
+void movePiece(char mowement[], char board[][9])
 {
-    if (board[Yb - 1][x1] == movement[0]) {
+    if (board[Yb - 1][x1] == mowement[0]) {
         board[Yb - 1][x1] = ' ';
-        board[y2 - 1][x2] = movement[0];
+        board[y2 - 1][x2] = mowement[0];
     }
 }
 
