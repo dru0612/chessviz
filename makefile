@@ -28,7 +28,7 @@ build/test/main.o: test/main.cpp
 			$(g) $(CFLAGS) -o build/test/main.o -c test/main.cpp
 
 testRun:
-				./bin/chessviz-test
+			./bin/chessviz-test
 
 clean:
 	rm -rf build/*.o build/*.d build/test/*.o build/test/*.d
