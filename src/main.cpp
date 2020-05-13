@@ -19,7 +19,7 @@ int main()
     Drawboard(board);
 
     while (1) {
-        cout << "make a move pawn:" << endl;
+        cout << "make a move:" << endl;
         cin >> mowement;
         cout << endl;
         move(mowement, board);
