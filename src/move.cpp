@@ -47,7 +47,6 @@ void movePiece(char mowement[], char board[][9])
 
 bool CorrectInput(char mowement[], char board[][9], int checking)
 {
-    
     string transformIntoInt = " ";
     int outOfBoard1 = 0, outOfBoard2 = 9;
     switch (mowement[0 + checking]) {
