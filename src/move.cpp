@@ -118,8 +118,9 @@ bool CorrectInput(char mowement[], char board[][9], int checking)
 
     if (Yb <= outOfBoard1 || Yb >= outOfBoard2 || x1 <= outOfBoard1
         || x1 >= outOfBoard2 || x2 <= outOfBoard1 || x2 >= outOfBoard2
-        || y2 <= outOfBoard1 || y2 >= outOfBoard2) {
-        cout << "Incorrect input" << endl;
+        || y2 <= outOfBoard1 || y2 >= outOfBoard2
+        || (board[Yb - 1][x1] == ' ')) {
+        cout << "Incorrect input. Abroad board or empty cage" << endl;
         return false;
     }
     return true;
